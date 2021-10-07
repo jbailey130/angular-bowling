@@ -1,0 +1,28 @@
+<div class="card-container">
+  <div class="card">
+    <div class="table">
+      <div class="row header-row">
+        <div class="column frame-name">Frame</div>
+        <div class="column frame-name">First Roll</div>
+        <div class="column frame-name">Second Roll</div>
+        <div class="column frame-name">Third Roll</div>
+        <div class="column frame-name">Score</div>
+      </div>
+      <div *ngFor="let frame of game._frames" class="row row-alternate">
+        <div class="column">{{ frame.name }}</div>
+        <div class="column">{{ frame.firstRoll }}</div>
+        <div class="column">{{ frame.secondRoll }}</div>
+        <div class="column">{{ frame.thirdRoll }}</div>
+        <div class="column">{{ frame.score() }}</div>
+      </div>
+      <div>
+        <div colspan="5" class="footer-row">Total Score: {{ game._total }}</div>
+      </div>
+      <div class="bowl">
+        <button (click)="bowl()">
+          <span>Bowl</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
